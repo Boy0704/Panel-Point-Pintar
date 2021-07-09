@@ -121,6 +121,7 @@ class Ebook extends CI_Controller
     
     public function update_action() 
     {
+        // log_r($_FILES);
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
@@ -129,7 +130,7 @@ class Ebook extends CI_Controller
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
-		'link' => $retVal = ($_FILES['link']['name'] == '') ? $_POST['link_old'] : upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 10000, 'ebook'),
+		'link' => $retVal = ($_FILES['link']['name'] == '') ? $_POST['link_old'] : upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 10000, 'link'),
 	    );
 
             $this->Ebook_model->update($this->input->post('id_ebook', TRUE), $data);
