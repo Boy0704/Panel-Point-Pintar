@@ -35,9 +35,10 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo get_data('kategori_video','id_kategori',$ebook->id_kategori,'nama_kategori') ?></td>
+			<td><?php echo get_data('kategori_ebook','id_kategori',$ebook->id_kategori,'nama_kategori') ?></td>
 			<td><?php echo $ebook->judul ?></td>
-			<td><a href="files/ebook/<?php echo $ebook->link ?>" target="_blank"></a><?php echo $ebook->link ?></td>
+			<td>
+                <a href="files/ebook/<?php echo $ebook->link ?>" target="_blank"><?php echo $ebook->link ?></a></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('ebook/update/'.$ebook->id_ebook).'?'.param_get(),'<span class="label label-info">Ubah</span>'); 
