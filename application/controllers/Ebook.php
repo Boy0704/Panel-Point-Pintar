@@ -84,10 +84,11 @@ class Ebook extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
+            $file = upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 10000, 'link');
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
-		'link' => $this->input->post('link',TRUE),
+		'link' => $file,
 	    );
 
             $this->Ebook_model->insert($data);
@@ -128,7 +129,7 @@ class Ebook extends CI_Controller
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
-		'link' => $this->input->post('link',TRUE),
+		'link' => $retVal = ($_FILES['link']['name'] == '') ? $_POST['link_old'] : upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 10000, 'ebook'),
 	    );
 
             $this->Ebook_model->update($this->input->post('id_ebook', TRUE), $data);
@@ -155,7 +156,6 @@ class Ebook extends CI_Controller
     {
 	$this->form_validation->set_rules('id_kategori', 'id kategori', 'trim|required');
 	$this->form_validation->set_rules('judul', 'judul', 'trim|required');
-	$this->form_validation->set_rules('link', 'link', 'trim|required');
 
 	$this->form_validation->set_rules('id_ebook', 'id_ebook', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

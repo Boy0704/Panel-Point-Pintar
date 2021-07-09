@@ -1,5 +1,13 @@
 <?php 
 
+function total_kat($id,$kategori)
+{
+	$CI =& get_instance();
+	$CI->db->where('id_kategori', $id);
+	$total = $CI->db->get($kategori)->num_rows();
+	return $total;
+}
+
 function time_since($timestamp)
 {
 	date_default_timezone_set('Asia/Jakarta');
