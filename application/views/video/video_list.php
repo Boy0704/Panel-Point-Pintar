@@ -38,7 +38,8 @@
 			<td width="80px"><?php echo $start ?></td>
 			<td><?php echo get_data('kategori_video','id_kategori',$video->id_kategori,'nama_kategori') ?></td>
 			<td><?php echo $video->judul ?></td>
-			<td><?php echo $video->link ?></td>
+			<td>
+                <a href="files/video/<?php echo $video->link ?>" target="_blank"><?php echo $video->link ?></a></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('video/update/'.$video->id_video).'?'.param_get(),'<span class="label label-info">Ubah</span>'); 
