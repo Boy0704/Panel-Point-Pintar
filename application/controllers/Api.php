@@ -308,6 +308,46 @@ class Api extends REST_Controller {
         $this->response($message, 200);
     }
 
+    public function video_post()
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header("WWW-Authenticate: Basic realm=\"Private Area\"");
+            header("HTTP/1.0 401 Unauthorized");
+            return false;
+        }
+
+        $data = file_get_contents("php://input");
+        $decoded_data = json_decode($data);
+
+        $this->db->where('id_kategori', $decoded_data->id_kategori);
+        $video = $this->db->get('video');
+        $data = array();
+        foreach ($video->result() as $rw) {
+            array_push($data, array(
+                'judul' => $rw->judul,
+                'link' => $rw->link,
+                'akses' => $rw->akses,
+            ));
+        }
+
+        if ($video) {
+            $message = array(
+                'kode' => '200',
+                'message' => 'berhasil',
+                'data' => $data
+            );
+        } else {
+            $condition = array('data'=>"kosong");
+            $message = array(
+                'kode' => '404',
+                'message' => 'gagal !',
+                'data' => [$condition]
+            );
+        }
+
+        $this->response($message, 200);
+    }
+
     public function edit_profil_post()
     {
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
