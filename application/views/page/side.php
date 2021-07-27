@@ -36,7 +36,7 @@
 
         <li><a href="app/ebook?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Ebook </span></a></li></li>
 
-        <li><a href="#" onclick="javasciprt: return confirm('Menu ini masih tahap pengembangan !')"><i class="fa fa-clone"></i> <span> Ujian Online </span></a></li></li>
+        <li><a href="app/ujian_online" ><i class="fa fa-clone"></i> <span> Ujian Online </span></a></li></li>
 
 
    

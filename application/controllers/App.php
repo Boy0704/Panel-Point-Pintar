@@ -63,6 +63,19 @@ class App extends CI_Controller {
         $this->load->view('v_index', $data);
     }
 
+    public function ujian_online()
+    {
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
+        
+        $data = array(
+            'konten' => 'app/ujian_online',
+            'judul_page' => 'Ujian Online',
+        );
+        $this->load->view('v_index', $data);
+    }
+
 
     
 
