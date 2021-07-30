@@ -5,8 +5,8 @@
     <title></title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <style type="text/css">
       .dijawab{
@@ -17,43 +17,30 @@
 </head>
 <body>
 
+<div class="row" style="margin: 10px;">
 
-<div class="row">
-
-    <div class="col-12 col-md-8">
-        <div class="p-1">
-            <span>Soal No. <b id="no_soal"></b> </span> <div id="pertanyaan"></div>
+    <div class="col-md-12">
+        <div>
+            <span>Soal No. <b id="no_soal"></b> </span> <div id="pertanyaan">
+                
+            </div>
             <hr style="background-color: #93c8ed;">
             <div id="jawaban"></div>
         </div>
-        <div class="row navigasi_btn" style="margin-top: 30px;">
-            <div class="col-12 col-md-3">
-                <button href="#" id="sebelumnya" data-id-soal="0" class="btn btn-warning round glow float-right mb-1">Sebelumnya</button>
+        <div style="margin-top: 30px;">
+            <div class="col-md-2">
+                <button href="#" id="sebelumnya" data-id-soal="0" class="btn btn-warning">Sebelumnya</button>
             </div>
-            <div class="col-12 col-md-6"></div>
-            <div class="col-12 col-md-2">
-                <button id="selanjutnya" data-id-soal="0" class="btn btn-primary round glow float-right mb-1">Selanjutnya</button>
+            <div class="col-md-8"></div>
+            <div class="col-md-2">
+                <button id="selanjutnya" data-id-soal="0" class="btn btn-primary">Selanjutnya</button>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
-        <div class="card" style="overflow: auto; height: 350px;">
-            <div class="card-header border-bottom d-flex justify-content-between align-items-center">
-                <h5 class="card-title"><i class="bx bx-spreadsheet font-medium-5 align-middle"></i> NAVIGASI SOAL</h5>
-
-            </div>
-            <div class="card-content">
-                <div class="card-body">
-
-                <div class="row" style="margin-top:10px; " id="nav_soal">
-
-                </div>
-
-                </div>
-
-            </div>
-        </div>
+    <div class="col-md-12">
+        <h5>Navigasi Soal</h5>
+        <div style="margin-top:10px; " id="nav_soal"></div>
     </div>
 
 
@@ -112,7 +99,7 @@ function simpan_jawaban(id_butir_soal,id_jwb) {
     .done(function(data) {
         console.log("success");
         if (data == 'berhasil') {
-            $('#no_'+id_butir_soal).attr('class', 'dijawab');
+            $('#no_'+id_butir_soal).attr('class', 'btn btn-success');
         }
     })
     .fail(function() {
@@ -138,7 +125,7 @@ $(document).ready(function() {
 
         var no=1;
         $.each(data, function(i, order){
-            $("#nav_soal").append('<button type="button" onclick="get_soal('+data[i].id_soal+','+no+')" data-no-soal="'+no+'" data-id-butir="'+data[i].id_soal+'" id="no_'+data[i].id_soal+'" class="btn btn-primary">'+no+'</button>');
+            $("#nav_soal").append('<button type="button" onclick="get_soal('+data[i].id_soal+','+no+')" data-no-soal="'+no+'" data-id-butir="'+data[i].id_soal+'" id="no_'+data[i].id_soal+'" class="btn btn-primary">'+no+'</button>&nbsp;');
             no = no +1;
         });
 

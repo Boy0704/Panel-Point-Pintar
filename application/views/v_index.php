@@ -175,7 +175,7 @@
     $('.selisih_filter input').focus();
   })
 </script>
-
-<script type="text/javascript"><?php echo $this->session->userdata('message') ?></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript"><?php echo $this->session->userdata('pesan') ?></script>
 </body>
 </html>

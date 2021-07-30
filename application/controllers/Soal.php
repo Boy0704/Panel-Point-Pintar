@@ -198,20 +198,21 @@ class Soal extends CI_Controller
     }
 
 
-    public function soal_user()
+    public function soal_user($id_user, $id_paket_soal)
     {
-        // $data = array(
-        //     'id_user' => $this->session->userdata('id_user'),
-        //     'id_paket' => $id_paket_soal,
-        //     'waktu_mulai'=>get_waktu(),
-        //     'status'=>0
-        // );
-        // $this->db->insert('skor', $data);
-        // $id_skor = $this->db->insert_id();
 
-        $data['id_paket_soal'] = 1;
-        $data['id_skor'] = 1;
-        $data['total_soal'] = 3;
+        $data = array(
+            'id_user' => $id_user,
+            'id_paket' => $id_paket_soal,
+            'waktu_mulai'=>get_waktu(),
+            'status'=>0
+        );
+        $this->db->insert('skor', $data);
+        $id_skor = $this->db->insert_id();
+
+        $data['id_paket_soal'] = $id_paket_soal;
+        $data['id_skor'] = $id_skor;
+        $data['total_soal'] = $this->db->get_where('soal', ['id_paket_soal'=>$id_paket_soal])->num_rows();
         $this->load->view('soal/soal_user',$data);
     }
 
@@ -231,7 +232,10 @@ class Soal extends CI_Controller
     {
         $this->db->where('id_soal', $id_soal);
         $soal = $this->db->get('soal')->row();
+        ?>
         
+        <a href="http://www.euroexam.net/sites/international/files/private/audio_materials/english-practice-test-book-a2/01-euro-a2-set1-short-conversations.mp3">play</a>
+        <?php
         echo $soal->soal;
     }
 
@@ -255,11 +259,13 @@ class Soal extends CI_Controller
             }
             
         ?>
-
-        <div onclick="simpan_jawaban('<?php echo $id_soal ?>','<?php echo $s ?>')">
+        <div class="radio" onclick="simpan_jawaban('<?php echo $id_soal ?>','<?php echo $s ?>')">
+          <label><input type="radio" name="optradio" <?php echo $checked ?>><?php echo strtoupper($s).'. '.$d->$s ?></label>
+        </div>
+<!--         <div onclick="simpan_jawaban('<?php echo $id_soal ?>','<?php echo $s ?>')">
           <input type="radio" id="<?php echo $d->$s ?>" name="drone" value="<?php echo $d->$s ?>" <?php echo $checked ?>>
           <label for="<?php echo $d->$s ?>"><?php echo strtoupper($s).'. '.$d->$s ?></label>
-        </div>
+        </div> -->
        
         <?php
         $s = chr(ord($s) + 1);

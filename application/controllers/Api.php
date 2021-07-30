@@ -23,6 +23,25 @@ class Api extends REST_Controller {
         $this->response($kontak, 502);
 	}
 
+    public function slide_get()
+    {
+        $this->db->order_by('id_slide', 'desc');
+        $slide = $this->db->get('slide');
+        $data = array();
+        foreach ($slide->result() as $rw) {
+            array_push($data, array(
+                'id_slide' => $rw->id_slide,
+                'slide' => $rw->slide,
+
+            ));
+        }
+        $message = array(
+            'data' => $data
+        );
+
+        $this->response($message, 200);
+    }
+
     public function menu_home_get()
     {
         $this->db->order_by('id_fitur', 'desc');
@@ -359,18 +378,25 @@ class Api extends REST_Controller {
         $data = file_get_contents("php://input");
         $decoded_data = json_decode($data);
 
-        $this->db->where('id_kategori', $decoded_data->id_fitur);
-        $video = $this->db->get('video');
+        $this->db->where('id_fitur', $decoded_data->id_fitur);
+        $this->db->where('jenis_soal', $decoded_data->jenis_soal);
+        $paket_soal = $this->db->get('paket_soal');
         $data = array();
-        foreach ($video->result() as $rw) {
+        foreach ($paket_soal->result() as $rw) {
             array_push($data, array(
-                'judul' => $rw->judul,
-                'link' => $rw->link,
-                'akses' => $rw->akses,
+                'id_paket_soal' => $rw->id_paket_soal,
+                'nama_soal' => $rw->nama_soal,
+                'type_soal' => $rw->type_soal,
+                'waktu' => $rw->waktu,
+                'keterangan' => $rw->keterangan,
+                'jenis_soal' => $rw->jenis_soal,
+                'point_salah' => $rw->point_salah,
+                'point_benar' => $rw->point_benar,
+                'target_point' => $rw->target_point,
             ));
         }
 
-        if ($video) {
+        if ($paket_soal) {
             $message = array(
                 'kode' => '200',
                 'message' => 'berhasil',

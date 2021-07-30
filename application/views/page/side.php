@@ -34,6 +34,8 @@
 
         <li><a href="app/video?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Video </span></a></li></li>
 
+        <li><a href="slide"><i class="fa fa-clone"></i> <span>Slide </span></a></li></li>
+
         <li><a href="app/ebook?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Ebook </span></a></li></li>
 
         <li><a href="app/ujian_online" ><i class="fa fa-clone"></i> <span> Ujian Online </span></a></li></li>

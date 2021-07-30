@@ -41,7 +41,11 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $slide->slide ?></td>
+			<td>
+                <a href="image/slide/<?php echo $slide->slide ?>" target="_blank">
+                    <img src="image/slide/<?php echo $slide->slide ?>" style="width: 100px;">
+                </a>         
+            </td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('slide/update/'.$slide->id_slide),'<span class="label label-info">Ubah</span>'); 
