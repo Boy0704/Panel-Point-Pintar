@@ -146,12 +146,14 @@ class Soal extends CI_Controller
     {
         $this->_rules();
 
+        // log_r($_POST);
+
         if ($this->form_validation->run() == FALSE) {
             $this->update($this->input->post('id_soal', TRUE));
         } else {
             $data = array(
 		'id_paket_soal' => $this->input->post('id_paket_soal',TRUE),
-		'soal' => $this->input->post('soal',TRUE),
+		'soal' => $this->input->post('soal'),
 		'a' => $this->input->post('a',TRUE),
 		'b' => $this->input->post('b',TRUE),
 		'c' => $this->input->post('c',TRUE),
@@ -232,10 +234,6 @@ class Soal extends CI_Controller
     {
         $this->db->where('id_soal', $id_soal);
         $soal = $this->db->get('soal')->row();
-        ?>
-        
-        <a href="http://www.euroexam.net/sites/international/files/private/audio_materials/english-practice-test-book-a2/01-euro-a2-set1-short-conversations.mp3">play</a>
-        <?php
         echo $soal->soal;
     }
 
