@@ -221,7 +221,7 @@ class Soal extends CI_Controller
     public function get_soal($id_paket_soal)
     {
         $data = array();
-        $this->db->order_by('rand()');
+        // $this->db->order_by('rand()');
         $this->db->where('id_paket_soal', $id_paket_soal);
         foreach ($this->db->get('soal')->result() as $key => $rw) {
             $data[] = $rw;
