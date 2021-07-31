@@ -308,6 +308,11 @@ class Soal extends CI_Controller
 
     }
 
+    public function tes_soal()
+    {
+        $this->load->view('soal/tes_soal');
+    }
+
 }
 
 /* End of file Soal.php */
