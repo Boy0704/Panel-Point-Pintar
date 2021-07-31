@@ -234,7 +234,7 @@ class Soal extends CI_Controller
     {
         $this->db->where('id_soal', $id_soal);
         $soal = $this->db->get('soal')->row();
-        echo str_repeat("../../", base_url(), $soal->soal);
+        echo str_replace("../../", base_url(), $soal->soal);
     }
 
     public function get_jawaban($id_soal,$id_skor)
