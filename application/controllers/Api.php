@@ -414,6 +414,49 @@ class Api extends REST_Controller {
         $this->response($message, 200);
     }
 
+    public function pembahasan_soal_post()
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header("WWW-Authenticate: Basic realm=\"Private Area\"");
+            header("HTTP/1.0 401 Unauthorized");
+            return false;
+        }
+
+        $data = file_get_contents("php://input");
+        $decoded_data = json_decode($data);
+
+        $this->db->where('id_user', $decoded_data->id_user);
+        $this->db->where('id_paket', $decoded_data->id_paket);
+        $this->db->where('status', '1');
+        $skor = $this->db->get('skor');
+        $data = array();
+        foreach ($skor->result() as $rw) {
+            $total_point = $this->db->query("SELECT sum(nilai) as total from skor_detail where id_skor='$rw->id_skor' ")->row()->total;
+            array_push($data, array(
+                'id_skor' => $rw->id_skor,
+                'waktu_selesai' => $rw->waktu_selesai,
+                'total_point' => $total_point,
+            ));
+        }
+
+        if ($skor) {
+            $message = array(
+                'kode' => '200',
+                'message' => 'berhasil',
+                'data' => $data
+            );
+        } else {
+            $condition = array('data'=>"kosong");
+            $message = array(
+                'kode' => '404',
+                'message' => 'gagal !',
+                'data' => [$condition]
+            );
+        }
+
+        $this->response($message, 200);
+    }
+
     public function selesai_soal_post()
     {
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
