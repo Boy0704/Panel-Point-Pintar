@@ -440,7 +440,7 @@ class Api extends REST_Controller {
             ));
         }
 
-        if ($skor) {
+        if ($skor->num_rows() > 0) {
             $message = array(
                 'kode' => '200',
                 'message' => 'berhasil',
