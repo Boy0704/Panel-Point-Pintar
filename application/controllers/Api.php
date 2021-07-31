@@ -434,7 +434,7 @@ class Api extends REST_Controller {
             $total_point = $this->db->query("SELECT sum(nilai) as total from skor_detail where id_skor='$rw->id_skor' ")->row()->total;
             array_push($data, array(
                 'id_skor' => $rw->id_skor,
-                'nama_soal' => get_data('paket_soal','id_paket_soal',$rw->id_paket_soal,'nama_soal'),
+                'nama_soal' => get_data('paket_soal','id_paket_soal',$rw->id_paket,'nama_soal'),
                 'waktu_selesai' => $rw->waktu_selesai,
                 'total_point' => $total_point,
             ));
