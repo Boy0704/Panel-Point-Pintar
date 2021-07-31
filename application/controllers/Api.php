@@ -414,6 +414,44 @@ class Api extends REST_Controller {
         $this->response($message, 200);
     }
 
+    public function selesai_soal_post()
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header("WWW-Authenticate: Basic realm=\"Private Area\"");
+            header("HTTP/1.0 401 Unauthorized");
+            return false;
+        }
+
+        $data = file_get_contents("php://input");
+        $decoded_data = json_decode($data);
+
+        $this->db->where('id_user', $decoded_data->id_user);
+        $this->db->where('id_paket', $decoded_data->id_paket);
+        $this->db->order_by('id_skor', 'desc');
+        $skor = $this->db->get('skor')->row();
+        $this->db->where('id_skor', $skor->id_skor);
+        $update = $this->db->update('skor', array('waktu_selesai'=>get_waktu(), 'status'=>'1'));
+        if ($update) {
+            $condition = array('status_selesai'=>'1');
+            $message = array(
+                'kode' => '200',
+                'message' => 'berhasil',
+                'data' => [$condition]
+            );
+        } else {
+            $condition = array('data'=>"kosong");
+            $message = array(
+                'kode' => '404',
+                'message' => 'gagal !',
+                'data' => [$condition]
+            );
+        }
+
+        $this->response($message, 200);
+    }
+
+
+
     public function edit_profil_post()
     {
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
