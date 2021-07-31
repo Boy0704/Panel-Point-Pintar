@@ -224,7 +224,7 @@ class Soal extends CI_Controller
         // $this->db->order_by('rand()');
         $this->db->where('id_paket_soal', $id_paket_soal);
         foreach ($this->db->get('soal')->result() as $key => $rw) {
-            $data[] = $rw;
+            $data[] = echo str_replace("../../", base_url(), $rw);;
         }
         echo json_encode($data);
     }
