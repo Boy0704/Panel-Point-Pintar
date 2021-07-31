@@ -115,8 +115,10 @@ $(document).ready(function() {
     // load navigasi soal
     $.getJSON('<?php echo base_url() ?>soal/get_soal/<?php echo $id_paket_soal ?>', function(data){
 
+        var soal_pertama = data[0].soal;
+        soal_pertama = soal_pertama.replace("../../", "<?php echo base_url() ?>");
         $('#no_soal').text('1');
-        $('#pertanyaan').html(data[0].soal);
+        $('#pertanyaan').html(soal_pertama);
 
         
         $.get('<?php echo base_url() ?>soal/get_jawaban/'+data[0].id_soal+'/<?php echo $id_skor ?>', function(jawaban) {
