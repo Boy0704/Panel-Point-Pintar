@@ -80,7 +80,8 @@ function get_soal(id_butir_soal,no) {
     });
 
     $.get('<?php echo base_url() ?>pembahasan/get_benar/'+id_butir_soal, function(benar) {
-        $('#benar').html(benar);
+        var j_benar = benar;
+        $('#benar').html("("+j_benar.toUpperCase()+")");
     });
 
     $.get('<?php echo base_url() ?>pembahasan/get_jawaban/'+id_butir_soal+'/<?php echo $id_skor ?>', function(jawaban) {
@@ -147,7 +148,8 @@ $(document).ready(function() {
         soal_pertama = soal_pertama.replace("../../", "<?php echo base_url() ?>");
         $('#no_soal').text('1');
         $('#pertanyaan').html(soal_pertama);
-        $("#benar").html(data[0].benar);
+        var j_benar = data[0].benar;
+        $('#benar').html("("+j_benar.toUpperCase()+")");
         $("#pembahasan").html(data[0].pembahasan);
         
         $.get('<?php echo base_url() ?>pembahasan/get_jawaban/'+data[0].id_soal+'/<?php echo $id_skor ?>', function(jawaban) {
