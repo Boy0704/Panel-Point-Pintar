@@ -25,6 +25,20 @@
             <label for="e">E <?php echo form_error('e') ?></label>
             <textarea class="form-control" rows="3" name="e" id="e" placeholder="E"><?php echo $e; ?></textarea>
         </div>
+        <?php
+        $id_paket_soal = $this->input->get('id_paket_soal');
+        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+         if ($type_soal_paket == 'skd'): ?>
+        <div class="form-group">
+            <label for="char">Type Soal</label>
+            <select name="type_soal" class="form-control">
+                <option value="<?php echo $type_soal ?>"><?php echo $type_soal ?></option>
+                <option value="twk">twk</option>
+                <option value="tiu">tiu</option>
+                <option value="tkp">tkp</option>
+            </select>
+        </div>
+        <?php endif ?>
 	    <div class="form-group">
             <label for="char">Benar <?php echo form_error('benar') ?></label>
             <select name="benar" class="form-control">

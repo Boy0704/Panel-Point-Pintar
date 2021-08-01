@@ -26,6 +26,14 @@
 		<th>D</th>
 		<th>E</th>
 		<th>Benar</th>
+        <?php
+        $id_paket_soal = $this->input->get('id_paket_soal');
+        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+         if ($type_soal_paket == 'skd'): ?>
+
+            <th>Type Soal</th>
+            
+        <?php endif ?>
 		<th>Pembahasan</th>
 		<th>Action</th>
             </tr>
@@ -45,6 +53,12 @@
 			<td><?php echo $soal->d ?></td>
 			<td><?php echo $soal->e ?></td>
 			<td><?php echo $soal->benar ?></td>
+            <?php
+            $id_paket_soal = $this->input->get('id_paket_soal');
+            $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+             if ($type_soal_paket == 'skd'): ?>
+                <td><?php echo $soal->type_soal ?></td>
+            <?php endif ?>
 			<td><?php echo $soal->pembahasan ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 

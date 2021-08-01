@@ -83,7 +83,8 @@ class Soal extends CI_Controller
 	    'c' => set_value('c'),
 	    'd' => set_value('d'),
 	    'e' => set_value('e'),
-	    'benar' => set_value('benar'),
+        'benar' => set_value('benar'),
+	    'type_soal' => set_value('type_soal'),
 	    'pembahasan' => set_value('pembahasan'),
 	);
         $this->load->view('v_index', $data);
@@ -104,7 +105,8 @@ class Soal extends CI_Controller
 		'c' => $this->input->post('c',TRUE),
 		'd' => $this->input->post('d',TRUE),
 		'e' => $this->input->post('e',TRUE),
-		'benar' => $this->input->post('benar',TRUE),
+        'benar' => $this->input->post('benar',TRUE),
+		'type_soal' => $this->input->post('type_soal',TRUE),
 		'pembahasan' => $this->input->post('pembahasan',TRUE),
 	    );
 
@@ -132,7 +134,8 @@ class Soal extends CI_Controller
 		'c' => set_value('c', $row->c),
 		'd' => set_value('d', $row->d),
 		'e' => set_value('e', $row->e),
-		'benar' => set_value('benar', $row->benar),
+        'benar' => set_value('benar', $row->benar),
+		'type_soal' => set_value('type_soal', $row->type_soal),
 		'pembahasan' => set_value('pembahasan', $row->pembahasan),
 	    );
             $this->load->view('v_index', $data);
@@ -159,7 +162,8 @@ class Soal extends CI_Controller
 		'c' => $this->input->post('c',TRUE),
 		'd' => $this->input->post('d',TRUE),
 		'e' => $this->input->post('e',TRUE),
-		'benar' => $this->input->post('benar',TRUE),
+        'benar' => $this->input->post('benar',TRUE),
+		'type_soal' => $this->input->post('type_soal',TRUE),
 		'pembahasan' => $this->input->post('pembahasan',TRUE),
 	    );
 
