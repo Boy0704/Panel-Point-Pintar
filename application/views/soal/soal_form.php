@@ -31,7 +31,7 @@
          if ($type_soal_paket == 'skd'): ?>
         <div class="form-group">
             <label for="char">Type Soal</label>
-            <select name="type_soal" class="form-control">
+            <select name="type_soal" class="form-control" required>
                 <option value="<?php echo $type_soal ?>"><?php echo $type_soal ?></option>
                 <option value="twk">twk</option>
                 <option value="tiu">tiu</option>
