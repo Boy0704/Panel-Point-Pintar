@@ -27,7 +27,7 @@
         </div>
         <?php
         $id_paket_soal = $this->input->get('id_paket_soal');
-        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal');
          if ($type_soal_paket == 'skd'): ?>
         <div class="form-group">
             <label for="char">Type Soal</label>

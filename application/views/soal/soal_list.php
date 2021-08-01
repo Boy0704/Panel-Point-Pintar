@@ -28,7 +28,7 @@
 		<th>Benar</th>
         <?php
         $id_paket_soal = $this->input->get('id_paket_soal');
-        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+        $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal');
          if ($type_soal_paket == 'skd'): ?>
 
             <th>Type Soal</th>
@@ -55,7 +55,7 @@
 			<td><?php echo $soal->benar ?></td>
             <?php
             $id_paket_soal = $this->input->get('id_paket_soal');
-            $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal')
+            $type_soal_paket = get_data('paket_soal','id_paket_soal',$id_paket_soal,'type_soal');
              if ($type_soal_paket == 'skd'): ?>
                 <td><?php echo $soal->type_soal ?></td>
             <?php endif ?>
