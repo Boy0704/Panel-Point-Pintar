@@ -48,10 +48,24 @@
         <h5>Navigasi Soal</h5>
         <div style="margin-top:10px; " id="nav_soal"></div>
     </div>
-
-
-
 </div>
+
+<div class="row" style="margin: 10px;">
+    <hr style="background-color: #93c8ed;">
+    <div class="col-md-12">
+        <h5>Nilai</h5>
+        <?php if ($type_soal == 'skd'): ?>
+            <p><b>Total Nilai TIU : <?php echo $this->db->query("SELECT sum(a.nilai) as nilai FROM skor_detail a INNER JOIN soal b ON a.id_soal = b.id_soal WHERE a.id_skor='$id_skor' and b.type_soal='tiu'")->row()->nilai; ?></b></p>
+
+            <p><b>Total Nilai TKP : <?php echo $this->db->query("SELECT sum(a.nilai) as nilai FROM skor_detail a INNER JOIN soal b ON a.id_soal = b.id_soal WHERE a.id_skor='$id_skor' and b.type_soal='tkp'")->row()->nilai; ?></b></p>
+
+            <p><b>Total Nilai TWK : <?php echo $this->db->query("SELECT sum(a.nilai) as nilai FROM skor_detail a INNER JOIN soal b ON a.id_soal = b.id_soal WHERE a.id_skor='$id_skor' and b.type_soal='twk'")->row()->nilai; ?></b></p>
+        <?php else: ?>
+            <p><b>Total Nilai : <?php echo $this->db->query("SELECT sum(a.nilai) as nilai FROM skor_detail a INNER JOIN soal b ON a.id_soal = b.id_soal WHERE a.id_skor='$id_skor'")->row()->nilai; ?></b></p>
+        <?php endif ?>
+    </div>
+</div>
+
 <script src="<?php echo base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -59,6 +73,14 @@ function get_soal(id_butir_soal,no) {
     $.get('<?php echo base_url() ?>pembahasan/get_pertanyaan/'+id_butir_soal, function(pertanyaan) {
         $('#no_soal').text(no);
         $('#pertanyaan').html(pertanyaan);
+    });
+
+    $.get('<?php echo base_url() ?>pembahasan/get_pembahasan/'+id_butir_soal, function(pembahasan) {
+        $('#pembahasan').html(pembahasan);
+    });
+
+    $.get('<?php echo base_url() ?>pembahasan/get_benar/'+id_butir_soal, function(benar) {
+        $('#benar').html(benar);
     });
 
     $.get('<?php echo base_url() ?>pembahasan/get_jawaban/'+id_butir_soal+'/<?php echo $id_skor ?>', function(jawaban) {

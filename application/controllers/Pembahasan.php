@@ -14,7 +14,8 @@ class Pembahasan extends CI_Controller {
 		$this->db->where('id_skor', $id_skor);
 		$skor = $this->db->get('skor')->row();
 
-		$data['id_paket_soal'] = $skor->id_paket;
+        $data['id_paket_soal'] = $skor->id_paket;
+		$data['type_soal'] = get_data('paket_soal','id_paket_soal',$skor->id_paket,'type_soal');
         $data['id_skor'] = $skor->id_skor;
         $data['id_user'] = $skor->id_user;
         $data['total_soal'] = $this->db->get_where('soal', ['id_paket_soal'=>$skor->id_paket])->num_rows();
@@ -51,6 +52,16 @@ class Pembahasan extends CI_Controller {
         $this->db->where('id_soal', $id_soal);
         $soal = $this->db->get('soal')->row();
         echo str_replace("../../", base_url(), $soal->soal);
+    }
+
+    public function get_pembahasan($id_soal)
+    {
+        echo get_data('soal','id_soal',$id_soal,'pembahasan');
+    }
+
+    public function get_benar($id_soal)
+    {
+        echo get_data('soal','id_soal',$id_soal,'benar');
     }
 
     public function get_jawaban($id_soal,$id_skor)
