@@ -37,7 +37,7 @@
             <select class="form-control" name="jenis_soal">
                 <option value="<?php echo $jenis_soal ?>"><?php echo $jenis_soal ?></option>
                 <option value="free">free</option>
-                <option value="mingguan">mingguan</option>
+                <option value="latihan">latihan</option>
                 <option value="akbar">akbar</option>
             </select>
         </div>
