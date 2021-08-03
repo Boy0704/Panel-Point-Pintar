@@ -11,6 +11,8 @@ $db['default'] = array(
 	// 'password' => '',
 	// 'database' => 'point_pintar',
 
+	
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
