@@ -31,6 +31,8 @@
         <li><a href="fitur?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Fitur Aplikasi </span></a></li></li>
 
         <li><a href="app/kelas?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Kelas </span></a></li></li>
+        
+        <li><a href="app/berlangganan?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Berlangganan </span></a></li></li>
 
         <li><a href="app/video?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Video </span></a></li></li>
 

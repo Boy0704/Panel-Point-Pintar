@@ -142,7 +142,7 @@ function simpan_jawaban(id_butir_soal,id_jwb) {
 
 $(document).ready(function() {
     // load navigasi soal
-    $.getJSON('<?php echo base_url() ?>pembahasan/get_soal/<?php echo $id_paket_soal ?>', function(data){
+    $.getJSON('<?php echo base_url() ?>pembahasan/get_soal/<?php echo $id_paket_soal ?>/<?php echo $id_skor ?>', function(data){
 
         var soal_pertama = data[0].soal;
         soal_pertama = soal_pertama.replace("../../", "<?php echo base_url() ?>");
@@ -159,17 +159,17 @@ $(document).ready(function() {
         var no=1;
         var btn_class = "";
         $.each(data, function(i, order){
-            // if (data[i].id_soal_skor != null) {
-            //     if (data[i].benar = data[i].id_jawaban ) {
-            //         btn_class = "btn_success";
-            //     } else {
-            //         btn_class = "btn_danger";
-            //     }
-            // } else {
-            //     btn_class = "btn_primary";
-            // }
+            if (data[i].id_soal_skor != null) {
+                if (data[i].benar == data[i].id_jawaban ) {
+                    btn_class = "btn-success";
+                } else {
+                    btn_class = "btn-danger";
+                }
+            } else {
+                btn_class = "btn-default";
+            }
 
-            $("#nav_soal").append('<button type="button" onclick="get_soal('+data[i].id_soal+','+no+')" data-no-soal="'+no+'" data-id-butir="'+data[i].id_soal+'" id="no_'+data[i].id_soal+'" class="btn btn_primary">'+no+'</button>&nbsp;');
+            $("#nav_soal").append('<button type="button" onclick="get_soal('+data[i].id_soal+','+no+')" data-no-soal="'+no+'" data-id-butir="'+data[i].id_soal+'" id="no_'+data[i].id_soal+'" class="btn '+btn_class+'">'+no+'</button>&nbsp;');
             no = no +1;
         });
 

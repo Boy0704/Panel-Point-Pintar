@@ -22,7 +22,7 @@ class Pembahasan extends CI_Controller {
         $this->load->view('pembahasan/soal_user',$data);
 	}
 
-	public function get_soal($id_paket_soal)
+	public function get_soal($id_paket_soal, $id_skor)
     {
         $data = array();
         // $this->db->order_by('rand()');
@@ -36,7 +36,7 @@ class Pembahasan extends CI_Controller {
 				skor a
 				INNER JOIN skor_detail b ON a.id_skor = b.id_skor
 				RIGHT JOIN soal c ON c.id_soal=b.id_soal
-				WHERE c.id_paket_soal = '$id_paket_soal'
+				WHERE c.id_paket_soal = '$id_paket_soal' and a.id_skor='$id_skor'
 
         ";
 

@@ -6,10 +6,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'point_pintar',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'point_pintar',
+
+	'hostname' => 'ayogolive.com',
+	'username' => 'u9640915_user',
+	'password' => '@rewdcxz1',
+	'database' => 'u9640915_point_pintar',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

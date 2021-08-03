@@ -76,6 +76,19 @@ class App extends CI_Controller {
         $this->load->view('v_index', $data);
     }
 
+    public function berlangganan()
+    {
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
+        
+        $data = array(
+            'konten' => 'app/berlangganan',
+            'judul_page' => 'Master Berlangganan',
+        );
+        $this->load->view('v_index', $data);
+    }
+
 
     
 
