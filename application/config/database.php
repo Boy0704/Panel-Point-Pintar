@@ -11,11 +11,6 @@ $db['default'] = array(
 	// 'password' => '',
 	// 'database' => 'point_pintar',
 
-	'hostname' => 'ayogolive.com',
-	'username' => 'u9640915_user',
-	'password' => '@rewdcxz1',
-	'database' => 'u9640915_point_pintar',
-
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
