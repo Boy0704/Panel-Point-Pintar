@@ -53,15 +53,16 @@
                   <td>: <?php echo number_format($br->total_bayar) ?></td>
                 </tr>
               </table>
-
+              
+              <?php if ($br->status_lunas == 't'): 
+                  $total_bayar = number_format($br->total_bayar);
+                  ?>
               <p>
                 Lakukan pembayaran sesuai dengan total tagihan agar memudahkan pengecekan pembayaran. Pembayaran hari ini akan di proses hari ini juga, setelah melakukan pembayaran lakukan konfirmasi pembayaran ke admin dengan mengklik tombol di bawah ini.
               </p>
 
               <div>
-                <?php if ($br->status_lunas == 't'): 
-                  $total_bayar = number_format($br->total_bayar);
-                  ?>
+                
                   <button class="btn btn-info" onclick="konfirmasi_pembayaran('6285273171136','<?php echo "Halo Admin, saya ingin konfirmasi pembelian paket $nama_paket dengan total bayar: Rp. $total_bayar" ?>')">Konfirmasi Pembayaran</button>
                 <?php endif ?>
               </div>
