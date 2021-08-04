@@ -17,7 +17,6 @@
       
       <div class="card">
         <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
             <a data-toggle="collapse" data-target="#collapseOne<?php echo $br->id_transaksi ?>" aria-expanded="true" aria-controls="collapseOne<?php echo $br->id_transaksi ?>">
                #<?php echo strtolower($br->no_transaksi) ?> (tanggal : <?php echo strtolower($br->created_at) ?>)
                <?php if ($br->status_lunas == 'y'): ?>
@@ -26,7 +25,6 @@
                 <span style="text-align: right; float: right;" class="badge badge-warning">menunggu pembayaran</span>
                <?php endif ?>
             </a>
-          </h5>
         </div>
 
         <div id="collapseOne<?php echo $br-> id_transaksi ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -36,7 +34,12 @@
                 <tr>
                   <td>No Transaksi</td>
                   <td>: <?php echo $br->no_transaksi ?></td>
-
+                </tr>
+                <tr>
+                  <td>Nama</td>
+                  <td>: <?php echo get_data('users','id_user',$br->id_user,'nama') ?></td>
+                </tr>
+                <tr>
                   <td>Paket yang dipilih</td>
                   <td>: <?php 
                   $id_fitur = get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'id_fitur');
@@ -44,9 +47,6 @@
                   echo get_data('fitur','id_fitur',$id_fitur,'fitur')." ".get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'judul') ?></td>
                 </tr>
                 <tr>
-                  <td>Nama</td>
-                  <td>: <?php echo get_data('users','id_user',$br->id_user,'nama') ?></td>
-
                   <td>Total Bayar</td>
                   <td>: <?php echo number_format($br->total_bayar) ?></td>
                 </tr>
