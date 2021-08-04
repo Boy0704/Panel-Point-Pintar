@@ -52,8 +52,14 @@
                   <td>Total Bayar</td>
                   <td>: <?php echo number_format($br->total_bayar) ?></td>
                 </tr>
+                <tr>
+                  <td>Periode Aktif</td>
+                  <td>: <?php 
+                  $periode = get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'periode');
+                  echo $periode.' Tahun'; ?></td>
+                </tr>
               </table>
-              
+
               <?php if ($br->status_lunas == 't'): 
                   $total_bayar = number_format($br->total_bayar);
                   ?>

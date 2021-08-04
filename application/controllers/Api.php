@@ -127,6 +127,33 @@ class Api extends REST_Controller {
 		
 	}
 
+    public function register_post()
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header("WWW-Authenticate: Basic realm=\"Private Area\"");
+            header("HTTP/1.0 401 Unauthorized");
+            return false;
+        }
+
+        $data = file_get_contents("php://input");
+        $decoded_data = json_decode($data);
+        $data = array(
+            'nama' => $decoded_data->nama,
+            'username' => $decoded_data->username,
+            'password' => $decoded_data->password,
+        );
+        $user = $this->db->insert('users', $data);
+        $condition = array('daftar'=>'berhasil');
+        $message = array(
+            'kode' => '200',
+            'message' => 'Pendaftaran Berhasil Silahkan Login !',
+            'data' => [$condition]
+        );
+
+        $this->response($message, 200);
+        
+    }
+
     public function logout_post()
     {
         if (!isset($_SERVER['PHP_AUTH_USER'])) {
