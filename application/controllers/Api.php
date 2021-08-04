@@ -43,7 +43,7 @@ class Api extends REST_Controller {
 
     public function menu_home_get()
     {
-        $this->db->order_by('id_fitur', 'desc');
+        $this->db->order_by('id_fitur', 'asc');
         $fitur = $this->db->get('fitur');
         $data = array();
         foreach ($fitur->result() as $rw) {

@@ -35,9 +35,6 @@ class Users_model extends CI_Model
 	$this->db->or_like('nama', $q);
 	$this->db->or_like('username', $q);
 	$this->db->or_like('password', $q);
-	$this->db->or_like('id_level', $q);
-	$this->db->or_like('foto', $q);
-	$this->db->or_like('token', $q);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -49,9 +46,6 @@ class Users_model extends CI_Model
 	$this->db->or_like('nama', $q);
 	$this->db->or_like('username', $q);
 	$this->db->or_like('password', $q);
-	$this->db->or_like('id_level', $q);
-	$this->db->or_like('foto', $q);
-	$this->db->or_like('token', $q);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }

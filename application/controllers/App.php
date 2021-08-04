@@ -89,6 +89,46 @@ class App extends CI_Controller {
         $this->load->view('v_index', $data);
     }
 
+    public function transaksi()
+    {
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
+        
+        $data = array(
+            'konten' => 'app/transaksi',
+            'judul_page' => 'Transaksi',
+        );
+        $this->load->view('v_index', $data);
+    }
+
+    public function status_lunas($id_trx)
+    {
+        $id_user = get_data('transaksi','id_transaksi',$id_trx,'id_user');
+        $this->db->where('id_transaksi', $id_trx);
+        $this->db->update('transaksi', ['status_lunas'=>'y','updated_at'=>get_waktu()]);
+        $this->db->where('id_user', $id_user);
+        $this->db->update('users', ['jenis_akun'=>'premium']);
+        ?>
+        <script type="text/javascript">
+            alert("data berhasil di update !");
+            window.location="<?php echo base_url() ?>app/transaksi";
+        </script>
+        <?php
+    }
+
+    public function hapus_trx($id_trx)
+    {
+        $this->db->where('id_transaksi', $id_trx);
+        $this->db->delete('transaksi');
+        ?>
+        <script type="text/javascript">
+            alert("data berhasil di hapus !");
+            window.location="<?php echo base_url() ?>app/transaksi";
+        </script>
+        <?php
+    }
+
 
     
 
