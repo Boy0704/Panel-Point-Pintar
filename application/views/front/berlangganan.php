@@ -18,11 +18,11 @@
       <div class="card">
         <div class="card-header" id="headingOne">
             <a data-toggle="collapse" data-target="#collapseOne<?php echo $br->id_transaksi ?>" aria-expanded="true" aria-controls="collapseOne<?php echo $br->id_transaksi ?>">
-               #<?php echo strtolower($br->no_transaksi) ?> (tanggal : <?php echo strtolower($br->created_at) ?>)
+               #<?php echo strtolower($br->no_transaksi) ?> (tanggal : <?php echo strtolower($br->created_at) ?>) <br>
                <?php if ($br->status_lunas == 'y'): ?>
-                 <span style="text-align: right; float: right;" class="badge badge-success">success</span>
+                 <span class="badge badge-success">success</span>
                <?php else: ?>
-                <span style="text-align: right; float: right;" class="badge badge-warning">menunggu pembayaran</span>
+                <span class="badge badge-warning">menunggu pembayaran</span>
                <?php endif ?>
             </a>
         </div>
@@ -44,7 +44,9 @@
                   <td>: <?php 
                   $id_fitur = get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'id_fitur');
 
-                  echo get_data('fitur','id_fitur',$id_fitur,'fitur')." ".get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'judul') ?></td>
+                  $nama_paket = get_data('fitur','id_fitur',$id_fitur,'fitur')." ".get_data('berlangganan','id_berlangganan',$br->id_berlangganan,'judul');
+                  echo $nama_paket;
+                   ?></td>
                 </tr>
                 <tr>
                   <td>Total Bayar</td>
@@ -57,8 +59,10 @@
               </p>
 
               <div>
-                <?php if ($br->status_lunas == 't'): ?>
-                  <button class="btn btn-info" onclick="konfirmasi_pembayaran()">Konfirmasi Pembayaran</button>
+                <?php if ($br->status_lunas == 't'): 
+                  $total_bayar = number_format($br->total_bayar);
+                  ?>
+                  <button class="btn btn-info" onclick="konfirmasi_pembayaran('6285273171136','<?php echo "Halo Admin, saya ingin konfirmasi pembelian paket $nama_paket dengan total bayar: Rp. $total_bayar" ?>')">Konfirmasi Pembayaran</button>
                 <?php endif ?>
               </div>
             </div>
@@ -130,6 +134,12 @@
     </section><!-- End Pricing Section -->
 
   </main><!-- End #main -->
+
+  <script type="text/javascript">
+    function konfirmasi_pembayaran(noWa, pesan) {
+      WebAppInterface.waManual(noWa, pesan);
+    }
+  </script>
 
   <!-- ======= Footer ======= -->
   <!-- Vendor JS Files -->
