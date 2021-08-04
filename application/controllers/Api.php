@@ -32,7 +32,6 @@ class Api extends REST_Controller {
             array_push($data, array(
                 'id_slide' => $rw->id_slide,
                 'slide' => $rw->slide,
-
             ));
         }
         $message = array(

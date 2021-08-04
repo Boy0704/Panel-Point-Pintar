@@ -16,6 +16,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
   <link href="front/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="front/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="front/vendor/venobox/venobox.css" rel="stylesheet">

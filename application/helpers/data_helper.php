@@ -1,5 +1,21 @@
 <?php 
 
+function kode_unik()
+{
+	error_reporting(0);
+	$CI =& get_instance();
+	$CI->db->like('created_at', date('Y-m-d'), 'AFTER');
+	$CI->db->order_by('total_bayar', 'desc');
+	$total_bayar = $CI->db->get('transaksi')->row()->total_bayar;
+	$urutan = (int) substr($total_bayar, 3,3);
+	$urutan++;
+
+	$kode = sprintf("%03s", $urutan);
+
+	return $kode;
+
+}
+
 function total_kat($id,$kategori)
 {
 	$CI =& get_instance();
@@ -192,13 +208,12 @@ function kode_urut()
 {
 	error_reporting(0);
 	$CI =& get_instance();
-	$CI->db->like('create_at', date('Y-m-d'), 'AFTER');
-	$CI->db->order_by('no_antrian', 'desc');
-	$no_antrian = $CI->db->get('antrian')->row()->no_antrian;
-	$urutan = (int) substr($no_antrian, 3,3);
+	$CI->db->order_by('no_transaksi', 'desc');
+	$no_transaksi = $CI->db->get('transaksi')->row()->no_transaksi;
+	$urutan = (int) substr($no_transaksi, 3,3);
 	$urutan++;
 
-	$huruf = "ANT";
+	$huruf = "TRX";
 	$kode = $huruf. sprintf("%03s", $urutan);
 
 	return $kode;

@@ -10,6 +10,9 @@ class Kelas_online extends CI_Controller
         parent::__construct();
         $this->load->model('Kelas_online_model');
         $this->load->library('form_validation');
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
     }
 
     public function index()

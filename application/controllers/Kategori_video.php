@@ -10,6 +10,9 @@ class Kategori_video extends CI_Controller
         parent::__construct();
         $this->load->model('Kategori_video_model');
         $this->load->library('form_validation');
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
     }
 
     public function index()

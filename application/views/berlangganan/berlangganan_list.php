@@ -36,7 +36,8 @@
 		<th>Judul</th>
 		<th>Detail</th>
 		<th>Harga</th>
-		<th>Fitur</th>
+        <th>Fitur</th>
+		<th>Periode Batas</th>
 		<th>Action</th>
             </tr><?php
             foreach ($berlangganan_data as $berlangganan)
@@ -48,6 +49,7 @@
 			<td><?php echo $berlangganan->detail ?></td>
 			<td><?php echo $berlangganan->harga ?></td>
 			<td><?php echo get_data('fitur','id_fitur',$berlangganan->id_fitur,'fitur') ?></td>
+            <td><?php echo $retVal = ($berlangganan->periode =='') ? "" : $berlangganan->periode.' Tahun'; ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('berlangganan/update/'.$berlangganan->id_langganan.'?'.param_get()),'<span class="label label-info">Ubah</span>'); 

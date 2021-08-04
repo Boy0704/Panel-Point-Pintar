@@ -10,6 +10,9 @@ class A_user extends CI_Controller
         parent::__construct();
         $this->load->model('A_user_model');
         $this->load->library('form_validation');
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
     }
 
     public function index()

@@ -5,12 +5,16 @@
             <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul" value="<?php echo $judul; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="detail">Detail <?php echo form_error('detail') ?></label>
-            <textarea class="form-control textarea_editor" rows="3" name="detail" id="detail" placeholder="Detail"><?php echo $detail; ?></textarea>
+            <label for="detail">Detail</label>
+            <textarea class="form-control textarea_editor" rows="3" name="detail" id="detail" placeholder="Detail" required><?php echo $detail; ?></textarea>
         </div>
 	    <div class="form-group">
             <label for="int">Harga <?php echo form_error('harga') ?></label>
             <input type="text" class="form-control" name="harga" id="harga" placeholder="Harga" value="<?php echo $harga; ?>" />
+        </div>
+        <div class="form-group">
+            <label for="int">Periode </label>
+            <input type="text" class="form-control" name="periode" id="periode" placeholder="Periode" value="<?php echo $periode; ?>" required/>
         </div>
 	    <input type="hidden" name="id_fitur" value="<?php echo $this->input->get('id_fitur') ?>">
 	    <input type="hidden" name="id_langganan" value="<?php echo $id_langganan; ?>" /> 

@@ -10,6 +10,9 @@ class Berlangganan extends CI_Controller
         parent::__construct();
         $this->load->model('Berlangganan_model');
         $this->load->library('form_validation');
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
     }
 
     public function index()
@@ -79,7 +82,8 @@ class Berlangganan extends CI_Controller
 	    'id_langganan' => set_value('id_langganan'),
 	    'judul' => set_value('judul'),
 	    'detail' => $detail,
-	    'harga' => set_value('harga'),
+        'harga' => set_value('harga'),
+	    'periode' => set_value('periode'),
 	    'id_fitur' => set_value('id_fitur'),
 	);
         $this->load->view('v_index', $data);
@@ -95,7 +99,8 @@ class Berlangganan extends CI_Controller
             $data = array(
 		'judul' => $this->input->post('judul',TRUE),
 		'detail' => $this->input->post('detail'),
-		'harga' => $this->input->post('harga',TRUE),
+        'harga' => $this->input->post('harga',TRUE),
+		'periode' => $this->input->post('periode',TRUE),
 		'id_fitur' => $this->input->post('id_fitur',TRUE),
 	    );
 
@@ -118,7 +123,8 @@ class Berlangganan extends CI_Controller
 		'id_langganan' => set_value('id_langganan', $row->id_langganan),
 		'judul' => set_value('judul', $row->judul),
 		'detail' => set_value('detail', $row->detail),
-		'harga' => set_value('harga', $row->harga),
+        'harga' => set_value('harga', $row->harga),
+		'periode' => set_value('periode', $row->periode),
 		'id_fitur' => set_value('id_fitur', $row->id_fitur),
 	    );
             $this->load->view('v_index', $data);
@@ -138,7 +144,8 @@ class Berlangganan extends CI_Controller
             $data = array(
 		'judul' => $this->input->post('judul',TRUE),
 		'detail' => $this->input->post('detail',TRUE),
-		'harga' => $this->input->post('harga',TRUE),
+        'harga' => $this->input->post('harga',TRUE),
+		'periode' => $this->input->post('periode',TRUE),
 		'id_fitur' => $this->input->post('id_fitur',TRUE),
 	    );
 

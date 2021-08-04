@@ -10,6 +10,9 @@ class Slide extends CI_Controller
         parent::__construct();
         $this->load->model('Slide_model');
         $this->load->library('form_validation');
+        if ($this->session->userdata('level') == '') {
+            redirect('login');
+        }
     }
 
     public function index()
