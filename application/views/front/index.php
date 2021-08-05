@@ -17,7 +17,9 @@
           <div>
             <h1>We design digital products that help grow businesses</h1>
             <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="https://play.google.com/store/apps/details?id=com.apps.pointpintar" target="_blank">
+              <img src="front/img/download_plystore.png" style="height: 50px;">
+            </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
