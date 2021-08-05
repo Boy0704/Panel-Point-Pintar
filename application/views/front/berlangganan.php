@@ -69,7 +69,7 @@
 
               <div>
                 
-                  <button class="btn btn-info" onclick="konfirmasi_pembayaran('6285273171136','<?php echo "Halo Admin, saya ingin konfirmasi pembelian paket $nama_paket dengan total bayar: Rp. $total_bayar" ?>')">Konfirmasi Pembayaran</button>
+                  <button class="btn btn-info" onclick="konfirmasi_pembayaran('6285161480960','<?php echo "Halo Admin, saya ingin konfirmasi pembelian paket $nama_paket dengan total bayar: Rp. $total_bayar" ?>')">Konfirmasi Pembayaran</button>
                 <?php endif ?>
               </div>
             </div>
