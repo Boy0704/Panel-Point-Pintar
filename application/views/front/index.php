@@ -545,81 +545,55 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Berlangganan</h2>
+          <p>Silahkan pilih jenis langganan yang kamu minati.</p>
+          <br>
+          <p>
+            <select class="form-control" id="fitur">
+              <?php foreach ($this->db->get('fitur')->result() as $rw):
+              $selected = ""; 
+                if ($_GET['id_fitur']) {
+                  if ($rw->id_fitur == $this->input->get('id_fitur')) {
+                    $selected = "selected";
+                  } else {
+                    $selected = "";
+                  }
+                } else {
+                  $selected = "";
+                }
+              ?>
+                <option value="<?php echo $rw->id_fitur ?>" <?php echo $selected ?>><?php echo $rw->fitur ?></option>
+              <?php endforeach ?>
+              
+            </select>
+          </p>
         </div>
 
         <div class="row">
-
+          <?php 
+          if (isset($_GET['id_fitur'])) {
+            $this->db->where('id_fitur', $this->input->get('id_fitur'));
+          } else {
+            $this->db->where('id_fitur','1');
+          }
+          
+          foreach ($this->db->get('berlangganan')->result() as $rw): ?>
+            
+          
           <div class="col-lg-3 col-md-6">
             <div class="box" data-aos="zoom-in">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
+              <h3><?php echo $rw->judul ?></h3>
+              <h4><sup>Rp </sup><?php echo number_format($rw->harga) ?></h4>
+              <?php echo $rw->detail ?>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="web/transaksi/<?php echo $this->uri->segment(3) ?>/<?php echo $rw->id_berlangganan ?>" class="btn-buy">Pilih</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
+          <?php endforeach ?>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
+          
         </div>
 
       </div>
