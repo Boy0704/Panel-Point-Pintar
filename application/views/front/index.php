@@ -15,8 +15,8 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
-            <h1>We design digital products that help grow businesses</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
+            <h1>Kami membantu mewujudkan mimpi anda menjadi lulusan terbaik</h1>
+            <h2>Pelopor pembelajaran online terlengkap dan terpercaya</h2>
             <a href="https://play.google.com/store/apps/details?id=com.apps.pointpintar" target="_blank">
               <img src="front/img/download_plystore.png" style="height: 50px;">
             </a>
@@ -42,18 +42,12 @@
           </div>
           <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
             <div class="content pt-4 pt-lg-0">
-              <h3>Learn more about us</h3>
-              <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
-              </ul>
+              <h3>Tentang Kami</h3>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate tera noden carma palorp mades tera.
+                Point Pintar merupakan pelopor bimbingan belajar online dengan layanan CAT online, bimbel dari beberapa program dan menyediakan bimbingan offline yang intensive selama 30 hari.
+              </p>
+              <p>
+                Berdiri sejak tahun 2008 dan saat ini bimbingan belajar Bintaro Learning Center telah membantu meluluskan ribuan peserta bimbingan CPNS dan peserta untuk sekolah kedinasan seperti STAN dan IPDN Selengkapnya
               </p>
             </div>
           </div>
@@ -71,26 +65,26 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item" data-aos="fade-up">
                 <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                  <h4>Modi sit est</h4>
-                  <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
+                  <h4>Pilihan Menu Belajar Terlengkap</h4>
+                  <p>Puluhan menu belajar yang dapat dipilih sesuai kebutuhanmu.</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="100">
                 <a class="nav-link" data-toggle="tab" href="#tab-2">
-                  <h4>Unde praesentium sed</h4>
-                  <p>Voluptas vel esse repudiandae quo excepturi.</p>
+                  <h4>Mudah diakses</h4>
+                  <p>Mudah diakses dimanapun dan kapanpun via smartphonemu.</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="200">
                 <a class="nav-link" data-toggle="tab" href="#tab-3">
-                  <h4>Pariatur explicabo vel</h4>
-                  <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
+                  <h4>Ratusan Ebook</h4>
+                  <p>Ratusan Ebook yang dapat kamu baca.</p>
                 </a>
               </li>
               <li class="nav-item mt-2" data-aos="fade-up" data-aos-delay="300">
                 <a class="nav-link" data-toggle="tab" href="#tab-4">
-                  <h4>Nostrum qui quasi</h4>
-                  <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
+                  <h4>Akses Soal mudah</h4>
+                  <p>Akses soal mudah cukup dengan smartphone kesayanganmu.</p>
                 </a>
               </li>
             </ul>
@@ -125,7 +119,7 @@
     </section><!-- End Features Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <!-- <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -169,10 +163,11 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section> -->
+    <!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!-- <section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -322,10 +317,11 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section> -->
+    <!-- End Portfolio Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
+<!--     <section id="cta" class="cta">
       <div class="container">
 
         <div class="row" data-aos="zoom-in">
@@ -339,10 +335,11 @@
         </div>
 
       </div>
-    </section><!-- End Cta Section -->
+    </section> -->
+    <!-- End Cta Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -410,10 +407,11 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> -->
+    <!-- End Testimonials Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -474,10 +472,11 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section> -->
+    <!-- End Team Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    <!-- <section id="clients" class="clients">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -538,7 +537,8 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section> -->
+    <!-- End Clients Section -->
 
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing section-bg">
@@ -600,7 +600,7 @@
     </section><!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
+    <!-- <section id="faq" class="faq">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -666,14 +666,15 @@
         </ul>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section> -->
+    <!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
+          <h2>Kontak Kami</h2>
         </div>
 
         <div class="row">
@@ -682,7 +683,7 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
+                <h4>Alamat :</h4>
                 <p>A108 Adam Street, New York, NY 535022</p>
               </div>
 
@@ -694,7 +695,7 @@
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>Call:</h4>
+                <h4>No Telp:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
 
@@ -707,23 +708,23 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
+                  <label for="name">Nama Kamu</label>
                   <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <label for="name">Email Kamu</label>
                   <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <label for="name">Subjek</label>
                 <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
+                <label for="name">Pesan</label>
                 <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                 <div class="validate"></div>
               </div>
