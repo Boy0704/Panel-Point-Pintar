@@ -105,8 +105,18 @@ class App extends CI_Controller {
     public function status_lunas($id_trx)
     {
         $id_user = get_data('transaksi','id_transaksi',$id_trx,'id_user');
+        $id_berlangganan = get_data('transaksi','id_transaksi',$id_trx,'id_berlangganan');
+        $periode = get_data('berlangganan','id_berlangganan',$id_berlangganan,'periode');
+
+        $tgl1 = date('Y-m-d');// pendefinisian tanggal awal
+        $batas_waktu = date('Y-m-d', strtotime('+'.$periode.' years', strtotime($tgl1))); 
+
+
         $this->db->where('id_transaksi', $id_trx);
-        $this->db->update('transaksi', ['status_lunas'=>'y','updated_at'=>get_waktu()]);
+        $this->db->update('transaksi', [
+            'status_lunas'=>'y',
+            'batas_waktu' => $batas_waktu,
+            'updated_at'=>get_waktu()]);
         $this->db->where('id_user', $id_user);
         $this->db->update('users', ['jenis_akun'=>'premium']);
         ?>

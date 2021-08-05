@@ -324,6 +324,21 @@ class Api extends REST_Controller {
         $data = file_get_contents("php://input");
         $decoded_data = json_decode($data);
 
+        $id_fitur = get_data('kategori_ebook','id_kategori',$decoded_data->id_kategori,'id_fitur');
+
+        $this->db->where('id_user', $decoded_data->id_user);
+        $this->db->where('id_fitur', $id_fitur);
+        $akses_user = $this->db->get('transaksi');
+        if ($akses_user->num_rows() > 0) {
+            if ( strtotime($akses_user->row()->batas_waktu) > strtotime(date('Y-m-d')) ) {
+                $user_akses = 'y';
+            } else {
+                $user_akses = 't';
+            }
+        } else {
+            $user_akses = 't';
+        }
+
         $this->db->where('id_kategori', $decoded_data->id_kategori);
         $video = $this->db->get('ebook');
         $data = array();
@@ -332,6 +347,7 @@ class Api extends REST_Controller {
                 'judul' => $rw->judul,
                 'link' => $rw->link,
                 'akses' => $rw->akses,
+                'user_akses' => $user_akses
             ));
         }
 

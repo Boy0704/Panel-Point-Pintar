@@ -23,6 +23,7 @@ class Web extends CI_Controller {
 			'no_transaksi' => kode_urut(),
 			'id_user' => $id_user,
 			'id_berlangganan' => $id_berlangganan,
+			'id_fitur' =>  $berlangganan->id_fitur,
 			'total_bayar' => $total_bayar,
 			'created_at' =>get_waktu()
 		);

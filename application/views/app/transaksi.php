@@ -9,6 +9,7 @@
 					<th>Paket yg diambil</th>
 					<th>Total Bayar</th>
 					<th>Status Lunas</th>
+					<th>Berlaku sampai</th>
 					<th>Created</th>
 					<th>Updated</th>
 					<th>Aksi</th>
@@ -36,6 +37,7 @@
 						<?php endif ?>
 
 					</td>
+					<td><?php echo $rw->batas_waktu ?></td>
 					<td><?php echo $rw->created_at ?></td>
 					<td><?php echo $rw->updated_at ?></td>
 					<td>
