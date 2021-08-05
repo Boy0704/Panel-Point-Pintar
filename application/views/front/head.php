@@ -4,8 +4,8 @@
   <base href="<?php echo base_url() ?>">
 
   <title>Point Pintar</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Point Pintar adalah layanan belajar online dimanapun dan kapanpun membantu anda lulus cpns, lulus skd dengan nilai sempurna" name="description">
+  <meta content="lulus cpns, lulus skd, belajar online" name="keywords">
 
   <!-- Favicons -->
   <link href="front/img/favicon.png" rel="icon">

@@ -47,7 +47,7 @@
                 Point Pintar merupakan pelopor bimbingan belajar online dengan layanan CAT online, bimbel dari beberapa program dan menyediakan bimbingan offline yang intensive selama 30 hari.
               </p>
               <p>
-                Berdiri sejak tahun 2008 dan saat ini bimbingan belajar Bintaro Learning Center telah membantu meluluskan ribuan peserta bimbingan CPNS dan peserta untuk sekolah kedinasan seperti STAN dan IPDN Selengkapnya
+                Berdiri sejak tahun 2008 dan saat ini bimbingan belajar Point Pintar telah membantu meluluskan ribuan peserta bimbingan CPNS dan peserta untuk sekolah kedinasan seperti STAN dan IPDN Selengkapnya
               </p>
             </div>
           </div>
