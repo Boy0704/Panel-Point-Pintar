@@ -420,6 +420,20 @@ class Api extends REST_Controller {
         $data = file_get_contents("php://input");
         $decoded_data = json_decode($data);
 
+
+        $this->db->where('id_user', $decoded_data->id_user);
+        $this->db->where('id_fitur', $decoded_data->id_fitur);
+        $akses_user = $this->db->get('transaksi');
+        if ($akses_user->num_rows() > 0) {
+            if ( strtotime($akses_user->row()->batas_waktu) > strtotime(date('Y-m-d')) ) {
+                $user_akses = 'y';
+            } else {
+                $user_akses = 't';
+            }
+        } else {
+            $user_akses = 't';
+        }
+
         $this->db->where('id_fitur', $decoded_data->id_fitur);
         $this->db->where('jenis_soal', $decoded_data->jenis_soal);
         $paket_soal = $this->db->get('paket_soal');
@@ -435,6 +449,7 @@ class Api extends REST_Controller {
                 'point_salah' => $rw->point_salah,
                 'point_benar' => $rw->point_benar,
                 'target_point' => $rw->target_point,
+                'user_akses' => $user_akses
             ));
         }
 
