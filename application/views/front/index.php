@@ -745,6 +745,14 @@
 
   <!-- ======= Footer ======= -->
   <?php $this->load->view('front/footer'); ?>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $("#fitur").change(function() {
+        var id_fitur = $(this).val();
+        window.location="<?php echo base_url() ?><?php echo $this->uri->segment(3) ?>?id_fitur="+id_fitur;
+      });
+    });
+  </script>
 
 </body>
 
