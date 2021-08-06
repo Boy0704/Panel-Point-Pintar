@@ -19,7 +19,7 @@
 	    <input type="hidden" name="id_fitur" value="<?php echo $this->input->get('id_fitur') ?>">
 	    <input type="hidden" name="id_berlangganan" value="<?php echo $id_berlangganan; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('berlangganan') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('berlangganan').'?'.param_get() ?>" class="btn btn-default">Cancel</a>
 	</form>
 
 <script type="text/javascript" src="assets/plugins/tinymce/tinymce.min.js"></script>
