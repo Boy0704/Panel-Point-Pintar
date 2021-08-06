@@ -7,7 +7,7 @@ class Berlangganan_model extends CI_Model
 {
 
     public $table = 'berlangganan';
-    public $id = 'id_langganan';
+    public $id = 'id_berlangganan';
     public $order = 'DESC';
 
     function __construct()
@@ -31,7 +31,7 @@ class Berlangganan_model extends CI_Model
     
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('id_langganan', $q);
+        $this->db->like('id_berlangganan', $q);
 	$this->db->or_like('judul', $q);
 	$this->db->or_like('detail', $q);
 	$this->db->or_like('harga', $q);
@@ -43,7 +43,7 @@ class Berlangganan_model extends CI_Model
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('id_langganan', $q);
+        $this->db->like('id_berlangganan', $q);
 	$this->db->or_like('judul', $q);
 	$this->db->or_like('detail', $q);
 	$this->db->or_like('harga', $q);
