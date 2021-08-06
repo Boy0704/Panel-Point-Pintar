@@ -586,7 +586,7 @@
               <h4><sup>Rp </sup><?php echo number_format($rw->harga) ?></h4>
               <?php echo $rw->detail ?>
               <div class="btn-wrap">
-                <a href="web/transaksi/<?php echo $this->uri->segment(3) ?>/<?php echo $rw->id_berlangganan ?>" class="btn-buy">Pilih</a>
+                <a href="#" data-toggle="modal" data-target="#mdlPaket" class="btn-buy">Pilih</a>
               </div>
             </div>
           </div>
@@ -743,6 +743,35 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="mdlPaket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Pemberitahuan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Silahkan install aplikasi Point Pintar di playstore dan lakukan pendaftaran seperti biasa, pilih paket di menu berlangganan. <br>
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=com.apps.pointpintar" target="_blank">
+              <img src="front/img/download_plystore.png" style="height: 50px;">
+            </a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tutup Modal -->
+
 
   <!-- ======= Footer ======= -->
   <?php $this->load->view('front/footer'); ?>
