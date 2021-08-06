@@ -53,7 +53,7 @@ class Berlangganan extends CI_Controller
         $row = $this->Berlangganan_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_langganan' => $row->id_langganan,
+		'id_berlangganan' => $row->id_berlangganan,
 		'judul' => $row->judul,
 		'detail' => $row->detail,
 		'harga' => $row->harga,
@@ -79,7 +79,7 @@ class Berlangganan extends CI_Controller
             'konten' => 'berlangganan/berlangganan_form',
             'button' => 'Create',
             'action' => site_url('berlangganan/create_action'),
-	    'id_langganan' => set_value('id_langganan'),
+	    'id_berlangganan' => set_value('id_berlangganan'),
 	    'judul' => set_value('judul'),
 	    'detail' => $detail,
         'harga' => set_value('harga'),
@@ -120,7 +120,7 @@ class Berlangganan extends CI_Controller
                 'konten' => 'berlangganan/berlangganan_form',
                 'button' => 'Update',
                 'action' => site_url('berlangganan/update_action'),
-		'id_langganan' => set_value('id_langganan', $row->id_langganan),
+		'id_berlangganan' => set_value('id_berlangganan', $row->id_berlangganan),
 		'judul' => set_value('judul', $row->judul),
 		'detail' => set_value('detail', $row->detail),
         'harga' => set_value('harga', $row->harga),
@@ -139,7 +139,7 @@ class Berlangganan extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('id_langganan', TRUE));
+            $this->update($this->input->post('id_berlangganan', TRUE));
         } else {
             $data = array(
 		'judul' => $this->input->post('judul',TRUE),
@@ -149,7 +149,7 @@ class Berlangganan extends CI_Controller
 		'id_fitur' => $this->input->post('id_fitur',TRUE),
 	    );
 
-            $this->Berlangganan_model->update($this->input->post('id_langganan', TRUE), $data);
+            $this->Berlangganan_model->update($this->input->post('id_berlangganan', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('berlangganan?'.param_get()));
         }
@@ -175,7 +175,7 @@ class Berlangganan extends CI_Controller
 	$this->form_validation->set_rules('harga', 'harga', 'trim|required');
 	// $this->form_validation->set_rules('id_fitur', 'id fitur', 'trim|required');
 
-	$this->form_validation->set_rules('id_langganan', 'id_langganan', 'trim');
+	$this->form_validation->set_rules('id_berlangganan', 'id_berlangganan', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 

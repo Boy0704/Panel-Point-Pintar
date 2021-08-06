@@ -17,7 +17,7 @@
             <input type="text" class="form-control" name="periode" id="periode" placeholder="Periode" value="<?php echo $periode; ?>" required/>
         </div>
 	    <input type="hidden" name="id_fitur" value="<?php echo $this->input->get('id_fitur') ?>">
-	    <input type="hidden" name="id_langganan" value="<?php echo $id_langganan; ?>" /> 
+	    <input type="hidden" name="id_berlangganan" value="<?php echo $id_berlangganan; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('berlangganan') ?>" class="btn btn-default">Cancel</a>
 	</form>
