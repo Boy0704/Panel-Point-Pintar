@@ -137,6 +137,17 @@ class Api extends REST_Controller {
 
         $data = file_get_contents("php://input");
         $decoded_data = json_decode($data);
+        $cek_username = $this->db->get_where('users', ['username' => $decoded_data->username]);
+        if ($cek_username->num_rows() > 0) {
+            $message = array(
+                'kode' => '200',
+                'message' => 'Username '.$decoded_data->username.' sudah ada!',
+                'data' => [$condition]
+            );
+
+            $this->response($message, 200);
+            exit();
+        }
         $data = array(
             'nama' => $decoded_data->nama,
             'username' => $decoded_data->username,
