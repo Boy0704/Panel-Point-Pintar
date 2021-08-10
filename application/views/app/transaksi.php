@@ -43,7 +43,9 @@
 					<td><?php echo $rw->updated_at ?></td>
 					<td>
 						<?php if ($rw->status_lunas == 't'): ?>
-							<a onclick="javasciprt: return confirm('Yakin akan konfirmasi pembayaran transaksi ini ?')" href="app/status_lunas/<?php echo $rw->id_transaksi ?>" class="label label-info">Konfirmasi</a>
+							<a onclick="javasciprt: return confirm('Yakin akan konfirmasi pembayaran transaksi ini ?')" href="app/status_lunas/<?php echo $rw->id_transaksi.'/y' ?>" class="label label-info">Konfirmasi</a>
+						<?php else: ?>
+							<a onclick="javasciprt: return confirm('Yakin akan batalkan konfirmasi pembayaran transaksi ini ?')" href="app/status_lunas/<?php echo $rw->id_transaksi.'/t' ?>" class="label label-warning">Batal Konfirmasi</a>
 						<?php endif ?>
 						
 						<a onclick="javasciprt: return confirm('Yakin akan hapus transaksi ini ?')" href="app/hapus_trx/<?php echo $rw->id_transaksi ?>" class="label label-danger">Hapus</a>

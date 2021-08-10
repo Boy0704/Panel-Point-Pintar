@@ -102,7 +102,7 @@ class App extends CI_Controller {
         $this->load->view('v_index', $data);
     }
 
-    public function status_lunas($id_trx)
+    public function status_lunas($id_trx, $status)
     {
         $id_user = get_data('transaksi','id_transaksi',$id_trx,'id_user');
         $id_berlangganan = get_data('transaksi','id_transaksi',$id_trx,'id_berlangganan');
@@ -114,7 +114,7 @@ class App extends CI_Controller {
 
         $this->db->where('id_transaksi', $id_trx);
         $this->db->update('transaksi', [
-            'status_lunas'=>'y',
+            'status_lunas'=>$status,
             'batas_waktu' => $batas_waktu,
             'updated_at'=>get_waktu()]);
         $this->db->where('id_user', $id_user);
