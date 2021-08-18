@@ -31,12 +31,15 @@ class Pembahasan extends CI_Controller {
 
         $sql = "
         	SELECT
-				c.*, b.id_soal as id_soal_skor, b.id_jawaban, b.jawaban
-			FROM
-				skor a
-				INNER JOIN skor_detail b ON a.id_skor = b.id_skor
-				RIGHT JOIN soal c ON c.id_soal=b.id_soal
-				WHERE c.id_paket_soal = '$id_paket_soal' and a.id_skor='$id_skor'
+                soal.*,
+                soal.id_soal as id_soal_skor,
+                ( SELECT id_jawaban FROM skor_detail WHERE id_skor = '$id_skor' and id_soal = soal.id_soal) AS id_jawaban,
+                ( SELECT jawaban FROM skor_detail WHERE id_skor = '$id_skor' and id_soal = soal.id_soal) AS jawaban
+                
+            FROM
+                soal 
+            WHERE
+                id_paket_soal = '$id_paket_soal'
 
         ";
 
