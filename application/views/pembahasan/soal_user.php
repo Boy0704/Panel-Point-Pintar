@@ -162,7 +162,7 @@ $(document).ready(function() {
             if (data[i].id_soal_skor != null) {
                 if (data[i].benar == data[i].id_jawaban ) {
                     btn_class = "btn-success";
-                } else if(data[i].benar != null) {
+                } else if(data[i].id_jawaban != null) {
                     btn_class = "btn-danger";
                 } else {
                     btn_class = "btn-default";
