@@ -87,7 +87,7 @@ class Ebook extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
-            $file = upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 10000, 'link');
+            $file = upload_gambar_biasa('ebook', 'files/ebook/', 'pdf', 20000, 'link');
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
