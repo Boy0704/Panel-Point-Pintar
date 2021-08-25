@@ -136,13 +136,13 @@ class Users extends CI_Controller
                 'action' => site_url('users/update_action'),
 		'id_user' => set_value('id_user', $row->id_user),
         'nama' => set_value('nama', $row->nama),
-		'email' => set_value('email', $row->email),
+		// 'email' => set_value('email', $row->email),
 		'username' => set_value('username', $row->username),
 		'password' => set_value('password', $row->password),
-        'id_level' => set_value('id_level', $row->id_level),
-		'jabatan' => set_value('jabatan', $row->jabatan),
-        'foto' => set_value('foto', $row->foto),
-		'token' => set_value('token', $row->token),
+  //       'id_level' => set_value('id_level', $row->id_level),
+		// 'jabatan' => set_value('jabatan', $row->jabatan),
+  //       'foto' => set_value('foto', $row->foto),
+		// 'token' => set_value('token', $row->token),
 	    );
             $this->load->view('v_index', $data);
         } else {
@@ -165,13 +165,13 @@ class Users extends CI_Controller
         }
             $data = array(
         'nama' => $this->input->post('nama',TRUE),
-		'email' => $this->input->post('email',TRUE),
+		// 'email' => $this->input->post('email',TRUE),
 		'username' => $this->input->post('username',TRUE),
 		'password' => $this->input->post('password',TRUE),
-        'id_level' => $this->input->post('id_level',TRUE),
-		'jabatan' => $this->input->post('jabatan',TRUE),
-		'foto' => $foto,
-		'token' => $this->input->post('token',TRUE),
+  //       'id_level' => $this->input->post('id_level',TRUE),
+		// 'jabatan' => $this->input->post('jabatan',TRUE),
+		// 'foto' => $foto,
+		// 'token' => $this->input->post('token',TRUE),
 	    );
 
             $this->Users_model->update($this->input->post('id_user', TRUE), $data);
@@ -197,11 +197,11 @@ class Users extends CI_Controller
     public function _rules() 
     {
     $this->form_validation->set_rules('nama', 'nama', 'trim|required');
-	$this->form_validation->set_rules('email', 'email', 'trim|required');
+	// $this->form_validation->set_rules('email', 'email', 'trim|required');
 	$this->form_validation->set_rules('username', 'username', 'trim|required');
 	$this->form_validation->set_rules('password', 'password', 'trim|required');
-    $this->form_validation->set_rules('id_level', 'Level', 'trim|required');
-	$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
+ //    $this->form_validation->set_rules('id_level', 'Level', 'trim|required');
+	// $this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
 
 	$this->form_validation->set_rules('id_user', 'id_user', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
