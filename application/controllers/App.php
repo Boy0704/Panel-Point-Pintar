@@ -24,6 +24,25 @@ class App extends CI_Controller {
 		$this->load->view('v_index', $data);
     }
 
+    public function kirim_notif()
+    { 
+        if ($_POST) {
+            $title = $this->input->post('judul');
+            $message = $this->input->post('pesan');
+            $topic = "customer";
+            $hasil = $this->Notif_model->send_notif($title, $message, $topic);
+            $this->session->set_flashdata('pesan', alert_biasa("Notifikasi Berhasil dikirim","success"));
+            redirect(site_url('app/kirim_notif'));
+        } else {
+            $data = array(
+                'konten' => 'notifikasi/notif',
+                'judul_page' => 'Kirim Notifikasi',
+            );
+            $this->load->view('v_index', $data);
+        }
+        
+    }
+
     public function kelas()
     {
         if ($this->session->userdata('level') == '') {
