@@ -29,6 +29,7 @@
         <?php if ($this->session->userdata('level') == 'admin'){ ?>
         <li><a href="app"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li><a href="app/transaksi" ><i class="fa fa-list"></i> <span> Transaksi </span></a></li></li>
+        <li><a href="app/kirim_notif" ><i class="fa fa-send"></i> <span> Kirim Notifikasi </span></a></li></li>
         <li><a href="fitur?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Fitur Aplikasi </span></a></li></li>
 
         <li><a href="app/kelas?&id_user=<?php echo $this->session->userdata('id_user'); ?>"><i class="fa fa-clone"></i> <span>Kelas </span></a></li></li>
