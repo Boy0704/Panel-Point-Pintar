@@ -29,7 +29,7 @@ $config['base_url']    = "$root";
 
 define('mapboxToken', 'your-mapbox-public-key');
 define('firebaseDb', 'https://firebasedb-url/');
-define('keyfcm', 'AAAABgI4j4I:APA91bGeyLJxcQS4uy9ZKM7x8PbpOQPuH6wd6ELKDbQwBhHpXQcSYvtWLIJO8DBVD0m4nrPnOfi65Th5XA1hHWL3Tjf-66Yy4VoLoT_7zCAscwNTiPPRCU8wFAarG5Sm4rdeeMGJM868');
+define('keyfcm', 'AAAAfacqxTY:APA91bEXBDhX9IEo-4rsDQQ9y23aBPBdpU3UCO32gH0-RBDM6UvE19QB406uJhBbvwbwu5UVvU_tpMGsPp55XYaQ_OBzAeTNCKpty2mmVVIjpiHc5jaQPXWAdixIMJUY6e3coiv66u9o');
 
 
 define('time_zone', 'Asia/Jakarta');

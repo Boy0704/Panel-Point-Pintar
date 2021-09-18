@@ -152,8 +152,8 @@ class Api extends REST_Controller {
             'nama' => $decoded_data->nama,
             'username' => $decoded_data->username,
             'password' => $decoded_data->password,
-            // 'no_telp' => $decoded_data->no_telp,
-            // 'email' => $decoded_data->email,
+            'no_telp' => $decoded_data->no_telp,
+            'email' => $decoded_data->email,
         );
         $user = $this->db->insert('users', $data);
         $condition = array('daftar'=>'berhasil');
