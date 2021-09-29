@@ -34,6 +34,8 @@
             <tr>
                 <th>No</th>
         <th>Nama</th>
+        <th>No Telp</th>
+        <th>Email</th>
 		<th>Username</th>
 		<th>Password</th>
 		<th>Action</th>
@@ -44,6 +46,8 @@
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
             <td><?php echo $users->nama ?></td>
+            <td><?php echo $users->no_telp ?></td>
+            <td><?php echo $users->email ?></td>
 			<td><?php echo $users->username ?></td>
 			<td><?php echo $users->password ?></td>
 			<td style="text-align:center" width="200px">
