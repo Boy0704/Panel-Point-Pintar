@@ -87,7 +87,7 @@ class Video extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
-            $file = upload_gambar_biasa('video', 'files/video/', 'mp4', 100000, 'link');
+            $file = upload_gambar_biasa('video', 'files/video/', 'mp4', 200000, 'link');
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
@@ -132,7 +132,7 @@ class Video extends CI_Controller
             $data = array(
 		'id_kategori' => $this->input->post('id_kategori',TRUE),
 		'judul' => $this->input->post('judul',TRUE),
-		'link' => $retVal = ($_FILES['link']['name'] == '') ? $_POST['link_old'] : upload_gambar_biasa('video', 'files/video/', 'mp4', 100000, 'link'),
+		'link' => $retVal = ($_FILES['link']['name'] == '') ? $_POST['link_old'] : upload_gambar_biasa('video', 'files/video/', 'mp4', 200000, 'link'),
 	    );
 
             $this->Video_model->update($this->input->post('id_video', TRUE), $data);
